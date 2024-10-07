@@ -1,0 +1,250 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso",
+    "description": "Rich and bold espresso shot.",
+    "price": 150,
+    "category": "Hot",
+    "quantity": ["30ml", "60ml"]
+  },
+  {
+    "id": 2,
+    "name": "Cappuccino",
+    "description": "Classic Italian coffee drink with foam.",
+    "price": 200,
+    "category": "Hot",
+    "quantity": ["180ml", "240ml"]
+  },
+  {
+    "id": 3,
+    "name": "Iced Latte",
+    "description": "Refreshing coffee drink served cold.",
+    "price": 180,
+    "category": "Cold",
+    "quantity": ["240ml", "350ml"]
+  },
+  {
+    "id": 4,
+    "name": "Tumble Coffee",
+    "description": "Unique blend of flavors for coffee lovers.",
+    "price": 220,
+    "category": "Tumble",
+    "quantity": ["240ml"]
+  },
+  {
+    "id": 5,
+    "name": "Mocha",
+    "description": "Delicious blend of chocolate and coffee.",
+    "price": 230,
+    "category": "Hot",
+    "quantity": ["240ml"]
+  },
+  {
+    "id": 6,
+    "name": "Flat White",
+    "description": "Smooth and velvety coffee drink.",
+    "price": 210,
+    "category": "Hot",
+    "quantity": ["180ml", "240ml"]
+  },
+  {
+    "id": 7,
+    "name": "Americano",
+    "description": "Espresso diluted with hot water.",
+    "price": 160,
+    "category": "Hot",
+    "quantity": ["240ml", "350ml"]
+  },
+  {
+    "id": 8,
+    "name": "Cold Brew",
+    "description": "Smooth and mellow coffee brewed cold.",
+    "price": 190,
+    "category": "Cold",
+    "quantity": ["240ml", "350ml"]
+  },
+  {
+    "id": 9,
+    "name": "Affogato",
+    "description": "A scoop of vanilla ice cream topped with a shot of hot espresso.",
+    "price": 250,
+    "category": "Dessert",
+    "quantity": ["1 serving"]
+  },
+  {
+    "id": 10,
+    "name": "Irish Coffee",
+    "description": "Coffee blended with whiskey and cream.",
+    "price": 300,
+    "category": "Specialty",
+    "quantity": ["240ml"]
+  },
+  {
+    "id": 11,
+    "name": "Whole Bean",
+    "description": "Roasted coffee beans in full.",
+    "price": 300,
+    "quantity": ["100gm", "150gm", "250gm", "500gm", "1kg"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 12,
+    "name": "Ground Coffee",
+    "description": "Finely ground coffee for easy brewing.",
+    "price": 250,
+    "quantity": ["100gm", "250gm", "500gm"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 13,
+    "name": "Espresso Beans",
+    "description": "Dark roasted beans ideal for espresso.",
+    "price": 400,
+    "quantity": ["100gm", "250gm", "500gm", "1kg"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 14,
+    "name": "Decaf Coffee",
+    "description": "Decaffeinated coffee for a smooth taste.",
+    "price": 350,
+    "quantity": ["100gm", "250gm", "500gm"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 15,
+    "name": "French Roast",
+    "description": "Rich, dark roast coffee with a bold flavor.",
+    "price": 320,
+    "quantity": ["100gm", "250gm", "500gm", "1kg"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 16,
+    "name": "Light Roast",
+    "description": "Lightly roasted for a smooth and fruity flavor.",
+    "price": 280,
+    "quantity": ["100gm", "250gm", "500gm"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 17,
+    "name": "Medium Roast",
+    "description": "Balanced roast with a rich aroma.",
+    "price": 300,
+    "quantity": ["100gm", "250gm", "500gm", "1kg"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 18,
+    "name": "Single Origin",
+    "description": "Coffee sourced from a single region for unique flavors.",
+    "price": 450,
+    "quantity": ["100gm", "250gm", "500gm"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 19,
+    "name": "Flavored Coffee",
+    "description": "Coffee infused with flavors like vanilla or hazelnut.",
+    "price": 360,
+    "quantity": ["100gm", "250gm", "500gm"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 20,
+    "name": "Cold Brew Coffee",
+    "description": "Coffee steeped in cold water for a smooth flavor.",
+    "price": 340,
+    "quantity": ["100gm", "250gm"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 21,
+    "name": "Organic Coffee",
+    "description": "Coffee grown without synthetic fertilizers or pesticides.",
+    "price": 380,
+    "quantity": ["100gm", "250gm", "500gm"],
+    "category": "At Home Coffee"
+  },
+  {
+    "id": 22,
+    "name": "Pancakes",
+    "description": "Fluffy pancakes served with syrup.",
+    "price": 150,
+    "quantity": ["2 pieces", "4 pieces"],
+    "category": "Food"
+  },
+  {
+    "id": 23,
+    "name": "Omelette",
+    "description": "Three-egg omelette with cheese and vegetables.",
+    "price": 180,
+    "quantity": ["1 serving"],
+    "category": "Food"
+  },
+  {
+    "id": 24,
+    "name": "French Toast",
+    "description": "Sweet bread dipped in egg and fried.",
+    "price": 160,
+    "quantity": ["2 slices", "4 slices"],
+    "category": "Food"
+  },
+  {
+    "id": 25,
+    "name": "Bagel with Cream Cheese",
+    "description": "Fresh bagel served with cream cheese.",
+    "price": 120,
+    "quantity": ["1 piece"],
+    "category": "Food"
+  },
+  {
+    "id": 26,
+    "name": "Avocado Toast",
+    "description": "Toasted bread topped with mashed avocado.",
+    "price": 200,
+    "quantity": ["1 slice", "2 slices"],
+    "category": "Food"
+  },
+  {
+    "id": 27,
+    "name": "Breakfast Burrito",
+    "description": "Tortilla filled with eggs, cheese, and veggies.",
+    "price": 250,
+    "quantity": ["1 piece"],
+    "category": "Food"
+  },
+  {
+    "id": 28,
+    "name": "Smoothie Bowl",
+    "description": "Smoothie topped with fruits and nuts.",
+    "price": 220,
+    "quantity": ["1 bowl"],
+    "category": "Food"
+  },
+  {
+    "id": 29,
+    "name": "Chia Pudding",
+    "description": "Chia seeds soaked in almond milk.",
+    "price": 190,
+    "quantity": ["1 bowl"],
+    "category": "Food"
+  },
+  {
+    "id": 30,
+    "name": "Yogurt Parfait",
+    "description": "Layers of yogurt, fruits, and granola.",
+    "price": 210,
+    "quantity": ["1 bowl"],
+    "category": "Food"
+  },
+  {
+    "id": 31,
+    "name": "Granola Bar",
+    "description": "Crunchy granola snack bar.",
+    "price": 90,
+    "quantity": ["1 piece", "3 pieces"],
+    "category": "Food"
+  }
+]
