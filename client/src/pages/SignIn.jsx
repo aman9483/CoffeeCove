@@ -77,22 +77,7 @@ const SignIn = () => {
               </div>
             </div>
 
-            {isSignUp && (
-              <div>
-                <label htmlFor="confirm-password" className="sr-only">Confirm Password</label>
-                <div className="relative">
-                  <input
-                    type="password"
-                    id="confirm-password"
-                    className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                    placeholder="Confirm password"
-                  />
-                  <span className="absolute inset-y-0 right-0 flex items-center pr-4">
-                    <FaLock className="text-gray-400" />
-                  </span>
-                </div>
-              </div>
-            )}
+           
 
             <button
               type="submit"
