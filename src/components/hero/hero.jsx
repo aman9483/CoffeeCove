@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import BgImage from "../../assets/bg-slate.png";
 import coffeeMain from "../../assets/black.png";
-import Navbar from '../Navbar/navbar';
+import Navbar from '../Navbar/Navbar';
 import { motion } from "framer-motion";
 import { GiCoffeeCup, GiCoffeeBeans } from "react-icons/gi";
 
