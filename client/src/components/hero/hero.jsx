@@ -20,13 +20,12 @@ const Hero = () => {
       <section className='relative min-h-[750px] w-full'>
         <div className="container mx-auto px-4 md:px-8">
 
-          {/* Navbar section */}
           <Navbar sidebar={sidebar} setSidebar={setSidebar} />
 
           {/* Hero section */}
           <div className='grid grid-cols-1 md:grid-cols-3 place-items-center min-h-[850px] gap-4'>
 
-            {/* Left Section with New Design */}
+           
             <div className='flex flex-col items-center justify-center bg-gray-800 rounded-lg shadow-lg p-6 mt-24 md:mt-20'>
               <motion.div
                 initial={{ opacity: 0, y: -100 }}
@@ -40,7 +39,6 @@ const Hero = () => {
                 </p>
               </motion.div>
 
-              {/* Coffee Icons Showcase */}
               <div className='flex justify-around w-full mt-6'>
                 <motion.div
                   initial={{ scale: 0 }}
@@ -58,7 +56,7 @@ const Hero = () => {
                 >
                   <GiCoffeeBeans />
                 </motion.div>
-                {/* Add more coffee icons as needed */}
+              
               </div>
             </div>
 
@@ -88,7 +86,6 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Right Section with New Design */}
             <div className='flex flex-col items-center justify-center bg-gray-800 rounded-lg shadow-lg p-6 mt-[-40]'>
               <motion.div
                 initial={{ opacity: 0, y: -100 }}
@@ -102,7 +99,7 @@ const Hero = () => {
                 </p>
               </motion.div>
 
-              {/* Coffee Icons Showcase */}
+           
               <div className='flex justify-around w-full mt-6'>
                 <motion.div
                   initial={{ scale: 0 }}
@@ -120,14 +117,14 @@ const Hero = () => {
                 >
                   <GiCoffeeBeans />
                 </motion.div>
-                {/* Add more coffee icons as needed */}
+               
               </div>
             </div>
 
           </div>
         </div>
 
-        {/* Sidebar */}
+      
         {sidebar && (
           <motion.div
             initial={{ x: "100%" }}
@@ -136,12 +133,12 @@ const Hero = () => {
           >
             <div className='w-full h-full flex flex-col justify-between items-center py-10'>
 
-              {/* Top Line */}
+            
               <div className='w-[1px] h-[70px] bg-white'></div>
 
-              {/* Social Links */}
+           
               <div className='flex flex-col justify-center items-center gap-6 text-white'>
-                {/* Social Icons */}
+            
                 <div className='inline-block p-2 rounded-full cursor-pointer border border-white'>
                   <GiCoffeeCup className='text-2xl' />
                 </div>
@@ -151,7 +148,6 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Bottom Line */}
               <div className='w-[1px] h-[70px] bg-white'></div>
             </div>
           </motion.div>

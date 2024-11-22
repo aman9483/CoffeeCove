@@ -8,10 +8,10 @@ const Navbar = ({ sidebar, setSidebar }) => {
   const [isDarkText, setIsDarkText] = useState(false);
 
   useEffect(() => {
-    // Customize this logic as needed, here based on scroll position for demonstration
+   
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setIsDarkText(scrollPosition > 100); // Change based on desired condition
+      setIsDarkText(scrollPosition > 100); 
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -50,11 +50,11 @@ const Navbar = ({ sidebar, setSidebar }) => {
             transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.4 }}
             className='flex items-center space-x-4'
           >
-            {/* Coffee Cup Icon */}
+       
             <div className="relative group">
 
               <Link to='coffee'>
-              <FaCoffee className={`text-3xl cursor-pointer ${isDarkText ? 'text-black' : 'text-blue-700'}`} />
+              <FaCoffee className={`text-3xl cursor-pointer ${isDarkText ? 'text-black' : 'text-black-700'}`} />
               <span className={`absolute left-1/2 transform -translate-x-1/2 bottom-full mb-1 w-auto p-1 ${isDarkText ? 'bg-white text-black' : 'bg-black text-white'} text-xs rounded hidden group-hover:block`}>
                 Coffee
               </span>
@@ -62,27 +62,13 @@ const Navbar = ({ sidebar, setSidebar }) => {
               </Link>
             </div>
 
-            {/* Cart Icon with Badge */}
-            <div className="relative group">
-
-            <Link to='cart'>
-              <FaShoppingCart className={`text-3xl cursor-pointer ${isDarkText ? 'text-black' : 'text-blue-700'}`} />
-              <span className='absolute -top-2 -right-2 bg-red-500 text-xs w-5 h-5 flex justify-center items-center rounded-full'>
-                0
-              </span>
-              </Link>
-        
-              <span className={`absolute left-1/2 transform -translate-x-1/2 bottom-full mb-1 w-auto p-1 ${isDarkText ? 'bg-white text-black text-blue-700' : 'bg-black text-white'} text-xs rounded hidden group-hover:block`}>
-                Cart
-              </span>
-
-              
-            </div>
+           
+           
 
             {/* Signup Icon */}
             <div className="relative group">
               <Link to='sign-in'>
-                <FaUserPlus className={`text-3xl cursor-pointer ${isDarkText ? 'text-black' : 'text-blue-700'}`} />
+                <FaUserPlus className={`text-3xl cursor-pointer ${isDarkText ? 'text-black' : 'text-black-700'}`} />
                 <span className={`absolute left-1/2 transform -translate-x-1/2 bottom-full mb-1 w-auto p-1 ${isDarkText ? 'bg-white text-black' : 'bg-black text-white'} text-xs rounded hidden group-hover:block`}>
                   Signup
                 </span>
@@ -93,7 +79,7 @@ const Navbar = ({ sidebar, setSidebar }) => {
             <div className="relative group">
               <GiHamburgerMenu
                 onClick={() => setSidebar(!sidebar)}
-                className={`text-3xl cursor-pointer ${isDarkText ? 'text-black' : 'text-blue-700'}`}
+                className={`text-3xl cursor-pointer ${isDarkText ? 'text-black' : 'text-black-700'}`}
               />
               <span className={`absolute left-1/2 transform -translate-x-1/2 bottom-full mb-1 w-auto p-1 ${isDarkText ? 'bg-white text-black' : 'bg-black text-white'} text-xs rounded hidden group-hover:block`}>
                 Menu

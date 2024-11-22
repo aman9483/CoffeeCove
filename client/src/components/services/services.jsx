@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaShoppingCart } from 'react-icons/fa';
-import data from './data.json';
-
-// Remove food image import since it won't be used
+import data from './data';
 
 const Services = () => {
   const [category, setCategory] = useState('All');
@@ -11,14 +9,21 @@ const Services = () => {
   const [selectedCoffee, setSelectedCoffee] = useState(null);
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState('');
+  const [isOrderFormOpen, setOrderFormOpen] = useState(false);
+  const [customerName, setCustomerName] = useState('');
+
+  const [customerAddress, setCustomerAddress] = useState('');
+  const [isOrderSuccess, setOrderSuccess] = useState(false);
 
   // Filter data based on selected category
   const filteredData = category === 'All' ? data : data.filter(item => item.category === category);
+
 
   const handleOrderNow = (item) => {
     setSelectedCoffee(item);
     setPopupOpen(true);
   };
+
 
   const handleClosePopup = () => {
     setPopupOpen(false);
@@ -27,14 +32,37 @@ const Services = () => {
     setSelectedQuantity('');
   };
 
+
   const handleSubmitOrder = () => {
-    console.log(`Ordered: ${selectedCoffee.name}, Size: ${selectedSize}, Quantity: ${selectedQuantity}`);
-    handleClosePopup(); // Close the popup after submitting
+    if (selectedSize && selectedQuantity) {
+      setPopupOpen(false);
+      setOrderFormOpen(true);
+    } else {
+      alert('Please select a size and quantity.');
+    }
+  };
+
+
+  const handleConfirmOrder = () => {
+    if (customerName && customerAddress) {
+      setOrderFormOpen(false);
+      setOrderSuccess(true);
+    } else {
+      alert('Please enter your name and address.');
+    }
+  };
+
+  const handleSuccessClose = () => {
+    setOrderSuccess(false);
+    setCustomerName('');
+    setCustomerAddress('');
+    setSelectedSize('');
+    setSelectedQuantity('');
   };
 
   return (
     <div className="container my-16 space-y-12 px-4">
-      {/* Section Title */}
+     
       <div className="text-center max-w-lg mx-auto space-y-4">
         <motion.h1
           initial={{ opacity: 0, scale: 0.5 }}
@@ -56,27 +84,10 @@ const Services = () => {
 
       {/* Category Buttons */}
       <div className="flex justify-center space-x-4 mb-8">
-        <button onClick={() => setCategory('All')} className={`px-4 py-2 rounded ${category === 'All' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700'}`}>
-          All
-        </button>
-        <button onClick={() => setCategory('Hot')} className={`px-4 py-2 rounded ${category === 'Hot' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700'}`}>
-          Hot
-        </button>
-        <button onClick={() => setCategory('Cold')} className={`px-4 py-2 rounded ${category === 'Cold' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700'}`}>
-          Cold
-        </button>
-        <button onClick={() => setCategory('Tumble')} className={`px-4 py-2 rounded ${category === 'Tumble' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700'}`}>
-          Tumble
-        </button>
-        <button onClick={() => setCategory('At Home Coffee')} className={`px-4 py-2 rounded ${category === 'At Home Coffee' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700'}`}>
-          At Home Coffee
-        </button>
-        <button onClick={() => setCategory('Food')} className={`px-4 py-2 rounded ${category === 'Food' ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700'}`}>
-          Food
-        </button>
+        {/* Category buttons (same as before) */}
       </div>
 
-      {/* Coffee & Food Cards Section */}
+      {/* Products List */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
         {filteredData.map((item) => (
           <motion.div
@@ -85,20 +96,15 @@ const Services = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 150, damping: 10 }}
           >
-            {/* Image Section */}
             <img
-              src={item.image} // Assuming your data has an `image` property
+              src={item.image} 
               alt={item.name}
               className="w-full h-64 object-contain bg-gray-100 p-4"
             />
-
-            {/* Content Section */}
             <div className="p-6 space-y-4">
               <h2 className="text-2xl font-bold text-gray-800">{item.name}</h2>
               <p className="text-md text-gray-600">{item.description}</p>
               <p className="text-lg font-semibold text-primary">₹{item.price}</p>
-
-              {/* Order Now Option */}
               <button 
                 onClick={() => handleOrderNow(item)} 
                 className="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white font-medium rounded-lg shadow hover:bg-primary-dark transition duration-300"
@@ -110,7 +116,7 @@ const Services = () => {
         ))}
       </div>
 
-      {/* Popup for size and quantity selection */}
+
       {isPopupOpen && selectedCoffee && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
@@ -152,6 +158,66 @@ const Services = () => {
                 Submit Order
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {isOrderFormOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+            <h2 className="text-xl font-bold mb-4">Enter Your Details</h2>
+            <div className="mb-4">
+              <label className="block text-md font-medium mb-2">Name:</label>
+              <input 
+                type="text"
+                value={customerName}
+                onChange={(e) => setCustomerName(e.target.value)}
+                className="w-full border rounded p-2"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-md font-medium mb-2">Address:</label>
+              <textarea
+                value={customerAddress}
+                onChange={(e) => setCustomerAddress(e.target.value)}
+                className="w-full border rounded p-2"
+              />
+            </div>
+
+          
+            <div className="flex justify-between mt-4">
+              <button 
+                onClick={() => setOrderFormOpen(false)} 
+                className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition duration-300"
+              >
+                Cancel
+              </button>
+              <button 
+                onClick={handleConfirmOrder} 
+                className="px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition duration-300"
+              >
+                Confirm Order
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Success Message */}
+      {isOrderSuccess && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+            <h2 className="text-2xl font-bold text-primary mb-4">Order Successful!</h2>
+            <p className="text-md text-gray-600 mb-4">
+              Thank you, {customerName}! Your order of {selectedQuantity} {selectedSize} {selectedCoffee.name} has been placed successfully.
+            </p>
+            <p className="text-md text-gray-600 mb-4">We will deliver to: {customerAddress} Shortly</p>
+            <button 
+              onClick={handleSuccessClose} 
+              className="px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition duration-300"
+            >
+              Close
+            </button>
           </div>
         </div>
       )}

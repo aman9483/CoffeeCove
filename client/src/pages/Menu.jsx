@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaShoppingCart } from 'react-icons/fa';
-import data from '../components/services/data.json';
+import data from '../components/services/data';
 
 const Services = () => {
   const [category, setCategory] = useState('All');
